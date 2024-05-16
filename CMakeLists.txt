@@ -15,14 +15,32 @@ project(cuixkANN
 
 set(CMAKE_CXX_STANDARD 17)
 
+include(FetchContent)
+FetchContent_Declare(
+    argparse
+    GIT_REPOSITORY https://github.com/p-ranav/argparse.git
+)
+FetchContent_MakeAvailable(argparse)
+
+include(FetchContent)
+FetchContent_Declare(
+    json URL
+    https://github.com/nlohmann/json/releases/download/v3.11.3/json.tar.xz
+)
+FetchContent_MakeAvailable(json)
+
 add_subdirectory(src/myLib)
+add_subdirectory(src/faiss)
 
 # add the executable
 add_executable(
-    ann
+    cuixkANN
     src/main.cpp
     src/utils.cpp
+    src/dataset.h
     src/test/test.cpp
+    src/index/index_brute.h
+    src/index/index_ivf.h
 )
 
-target_link_libraries(ann myLib)
+target_link_libraries(cuixkANN argparse myLib faiss nlohmann_json::nlohmann_json)

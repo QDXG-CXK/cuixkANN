@@ -1,0 +1,22 @@
+{
+  "ood400m":{
+  
+  },
+  
+  "ood600m":{
+  
+  },
+  
+  "sift1m":{
+    "query": "/home/yangshuo/data/sift1m/query.fbin",
+    "groundtruth": "/home/yangshuo/data/sift1m/gt.ibin",
+    "base": "/home/yangshuo/data/sift1m/base.fbin"
+  },
+  
+  "webface25m":{
+    "query": "/home/yangshuo/data/webface25m256d/query.fbin",
+    "groundtruth": "/home/yangshuo/data/webface25m256d/gt.ibin",
+    "base": "/home/yangshuo/data/webface25m256d/base.fbin"
+  }
+  
+}
